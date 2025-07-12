@@ -5,7 +5,7 @@
 ## 📦 What is this?
 
 This is **Anime Tracker**, a lightweight, no-fuss app I threw together to scratch a very specific itch:  
-👉 I needed a quick and easy way to know **when anime episodes were releasing** — without having to dive through streaming platforms, Reddit threads, or questionable wiki pages.
+👉 I needed a quick and easy way to know **when anime episodes were releasing**, without having to dive through streaming platforms, Reddit threads, or questionable wiki pages.
 
 So instead of waiting for someone else to build it...  
 I built it myself. For me. And now, for you (if you want it).
@@ -15,9 +15,9 @@ I built it myself. For me. And now, for you (if you want it).
 - 🔍 **Search** for anime titles using the AniList database.
 - 🗓️ **Track** release schedules and episode countdowns.
 - 📊 Filter by status: _Airing_, _Aired_, _Upcoming_, and _All_.
-- 🧠 Local storage-based tracking — no login, no cloud, just your browser remembering stuff.
+- 🧠 Local storage-based tracking, no login, no cloud, just your browser remembering stuff.
 - 🧽 Drag, drop, delete. Organize your anime list like a digital Marie Kondo.
-- 📦 Packaged into an `.exe` so it runs like a desktop app — because this ain’t a website. It's personal.
+- 📦 Packaged into an `.exe` so it runs like a desktop app, because this ain’t a website. It's personal.
 
 ## 🧠 Why did I make this?
 
