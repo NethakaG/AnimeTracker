@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -20,7 +20,6 @@
           rgba(139, 92, 246, 0.6)
         );
         border-radius: 4px;
-        transition: background 0.3s ease;
       }
       ::-webkit-scrollbar-thumb:hover {
         background: linear-gradient(
@@ -28,9 +27,6 @@
           rgba(59, 130, 246, 0.8),
           rgba(139, 92, 246, 0.8)
         );
-      }
-      ::-webkit-scrollbar-corner {
-        background: rgb(20, 19, 19);
       }
       * {
         margin: 0;
@@ -87,15 +83,11 @@
         border-radius: 12px;
         color: #e8eaed;
         transition: all 0.3s ease;
-        backdrop-filter: blur(10px);
       }
       .search-input:focus {
         outline: none;
         border-color: #3b82f6;
         box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
-      }
-      .search-input::placeholder {
-        color: #6b7280;
       }
       .loading {
         text-align: center;
@@ -112,9 +104,6 @@
         margin: 0 auto 1rem;
       }
       @keyframes spin {
-        0% {
-          transform: rotate(0);
-        }
         100% {
           transform: rotate(360deg);
         }
@@ -132,39 +121,10 @@
         padding: 1.5rem;
         cursor: pointer;
         transition: all 0.3s ease;
-        backdrop-filter: blur(10px);
-        position: relative;
-        overflow: hidden;
       }
       .anime-result:hover {
         transform: translateY(-4px);
         border-color: #3b82f6;
-        box-shadow: 0 8px 25px rgba(59, 130, 246, 0.15);
-      }
-      .anime-result::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 2px;
-        background: linear-gradient(90deg, #3b82f6, #8b5cf6);
-        transform: scaleX(0);
-        transition: transform 0.3s ease;
-      }
-      .anime-result:hover::before {
-        transform: scaleX(1);
-      }
-      .anime-info h3 {
-        font-size: 1.2rem;
-        margin-bottom: 0.5rem;
-        color: #e8eaed;
-      }
-      .anime-meta {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        margin-bottom: 1rem;
       }
       .anime-tag {
         padding: 0.25rem 0.75rem;
@@ -182,14 +142,6 @@
       }
       .status-not-yet-released {
         color: #8b5cf6;
-      }
-      .status-unknown {
-        color: #6b7280;
-      }
-      .next-episode {
-        font-size: 0.9rem;
-        color: #9ca3af;
-        margin-top: 0.5rem;
       }
       .tracker-section {
         padding: 2rem 1rem;
@@ -209,7 +161,6 @@
         background: linear-gradient(45deg, #3b82f6, #8b5cf6);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        background-clip: text;
       }
       .anime-count {
         background: rgba(59, 130, 246, 0.2);
@@ -237,21 +188,6 @@
         border: 1px solid rgba(59, 130, 246, 0.3);
         border-radius: 8px;
         color: #e8eaed;
-        font-size: 0.9rem;
-        transition: all 0.3s ease;
-      }
-      .tracker-search:focus {
-        outline: none;
-        border-color: #3b82f6;
-        box-shadow: 0 0 10px rgba(59, 130, 246, 0.2);
-      }
-      .search-icon {
-        position: absolute;
-        left: 0.75rem;
-        top: 50%;
-        transform: translateY(-50%);
-        color: #6b7280;
-        font-size: 1rem;
       }
       .category-filters {
         display: flex;
@@ -266,25 +202,12 @@
         color: #9ca3af;
         cursor: pointer;
         transition: all 0.3s ease;
-        font-size: 0.9rem;
-        font-weight: 500;
-      }
-      .category-btn:hover {
-        background: rgba(59, 130, 246, 0.2);
-        border-color: rgba(59, 130, 246, 0.5);
-        color: #3b82f6;
       }
       .category-btn.active {
         background: rgba(59, 130, 246, 0.3);
         border-color: #3b82f6;
         color: #3b82f6;
       }
-      .tracked-anime {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-        gap: 2rem;
-      }
-
       .refresh-btn {
         padding: 0.6rem 1rem;
         border: 1px solid rgba(59, 130, 246, 0.4);
@@ -295,20 +218,17 @@
         );
         color: #cbd5e1;
         border-radius: 8px;
-        font-weight: 600;
         cursor: pointer;
-        transition: transform 0.12s ease, filter 0.2s ease, background 0.2s ease;
-      }
-      .refresh-btn:hover {
-        filter: brightness(1.1);
-        transform: translateY(-1px);
       }
       .refresh-btn:disabled {
-        opacity: 0.6;
+        opacity: 0.5;
         cursor: not-allowed;
-        transform: none;
       }
-
+      .tracked-anime {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 2rem;
+      }
       .anime-card {
         background: rgba(15, 20, 25, 0.9);
         border: 1px solid rgba(59, 130, 246, 0.2);
@@ -323,18 +243,6 @@
         transform: translateY(-6px);
         border-color: #3b82f6;
         box-shadow: 0 12px 35px rgba(59, 130, 246, 0.2);
-      }
-      .anime-card.dragging {
-        opacity: 0.5;
-        transform: rotate(5deg);
-        z-index: 1000;
-      }
-      .anime-card.drag-over {
-        border-color: #22c55e;
-        box-shadow: 0 12px 35px rgba(34, 197, 94, 0.3);
-      }
-      .anime-card.hidden {
-        display: none;
       }
       .delete-btn {
         position: absolute;
@@ -351,30 +259,12 @@
         align-items: center;
         justify-content: center;
         font-size: 1.2rem;
-        transition: all 0.3s ease;
-        z-index: 10;
-      }
-      .delete-btn:hover {
-        background: rgba(239, 68, 68, 0.4);
-        transform: scale(1.1);
-      }
-      .anime-card h3 {
-        font-size: 1.4rem;
-        margin-bottom: 1rem;
-        color: #e8eaed;
-        line-height: 1.3;
       }
       .anime-details {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 0.5rem;
         margin-bottom: 1.5rem;
-      }
-      .detail-item {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0.5rem 0;
       }
       .detail-label {
         color: #9ca3af;
@@ -411,22 +301,11 @@
         font-weight: 600;
         margin-bottom: 0.5rem;
       }
-      .countdown-section.airing .countdown-title {
-        color: #22c55e;
-      }
-      .countdown-section.upcoming .countdown-title {
-        color: #8b5cf6;
-      }
-      .countdown-section.completed .countdown-title {
-        color: #fbbf24;
-      }
-      .countdown-section.default .countdown-title {
-        color: #3b82f6;
-      }
       .countdown-timer {
         font-size: 1.1rem;
         font-weight: 700;
         color: #e8eaed;
+        font-variant-numeric: tabular-nums;
       }
       .modal {
         display: none;
@@ -436,35 +315,17 @@
         width: 100%;
         height: 100%;
         background: rgba(0, 0, 0, 0.8);
-        backdrop-filter: blur(5px);
         z-index: 1000;
         align-items: center;
         justify-content: center;
       }
       .modal-content {
-        background: rgba(15, 20, 25, 0.95);
-        border: 1px solid rgba(59, 130, 246, 0.3);
+        background: #1a1e3a;
         border-radius: 16px;
         padding: 2rem;
         max-width: 400px;
         width: 90%;
         text-align: center;
-        backdrop-filter: blur(20px);
-      }
-      .modal h3 {
-        color: #e8eaed;
-        margin-bottom: 1rem;
-        font-size: 1.3rem;
-      }
-      .modal p {
-        color: #9ca3af;
-        margin-bottom: 2rem;
-        line-height: 1.5;
-      }
-      .modal-buttons {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
       }
       .btn {
         padding: 0.75rem 1.5rem;
@@ -472,152 +333,51 @@
         border-radius: 8px;
         cursor: pointer;
         font-weight: 600;
-        transition: all 0.3s ease;
-        min-width: 100px;
       }
       .btn-danger {
         background: #ef4444;
-        color: #fff;
-      }
-      .btn-danger:hover {
-        background: #dc2626;
-        transform: translateY(-2px);
+        color: white;
       }
       .btn-secondary {
-        background: rgba(107, 114, 128, 0.3);
-        color: #e8eaed;
-        border: 1px solid rgba(107, 114, 128, 0.5);
-      }
-      .btn-secondary:hover {
-        background: rgba(107, 114, 128, 0.5);
-        transform: translateY(-2px);
+        background: #4b5563;
+        color: white;
+        margin-left: 0.5rem;
       }
       .toast {
         position: fixed;
         top: 2rem;
         right: 2rem;
-        background: rgba(15, 20, 25, 0.95);
-        border: 1px solid rgba(59, 130, 246, 0.3);
-        border-radius: 8px;
+        background: #1a1e3a;
+        border: 1px solid #3b82f6;
         padding: 1rem 1.5rem;
-        color: #e8eaed;
-        backdrop-filter: blur(10px);
+        border-radius: 8px;
+        color: white;
         transform: translateX(400px);
         transition: transform 0.3s ease;
         z-index: 2000;
-        max-width: 300px;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
       }
       .toast.show {
         transform: translateX(0);
-      }
-      .toast.success {
-        border-color: rgba(34, 197, 94, 0.5);
-      }
-      .toast.error {
-        border-color: rgba(239, 68, 68, 0.5);
       }
       .empty-state {
         text-align: center;
         padding: 4rem 2rem;
         color: #6b7280;
       }
-      .empty-state h3 {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-        color: #9ca3af;
-      }
-      .empty-state p {
-        font-size: 1.1rem;
-        line-height: 1.6;
-      }
       .footer {
-        background: rgba(15, 20, 25, 0.8);
         border-top: 1px solid rgba(59, 130, 246, 0.2);
         padding: 1.5rem;
         text-align: center;
         color: #9ca3af;
-        font-size: 0.9rem;
         margin-top: 2rem;
-        backdrop-filter: blur(10px);
-      }
-      .footer p {
-        margin: 0;
-      }
-      .github-link {
-        color: #3b82f6;
-        text-decoration: none;
-        font-weight: 600;
-        transition: all 0.3s ease;
-        border-bottom: 1px solid transparent;
-      }
-      .github-link:hover {
-        color: #60a5fa;
-        border-bottom-color: #60a5fa;
-        transform: translateY(-1px);
       }
       @media (max-width: 768px) {
-        .header h1 {
-          font-size: 2rem;
-        }
-        .search-results {
-          grid-template-columns: 1fr;
-        }
         .tracked-anime {
           grid-template-columns: 1fr;
-        }
-        .anime-details {
-          grid-template-columns: 1fr;
-        }
-        .tracker-header {
-          flex-direction: column;
-          align-items: flex-start;
-          gap: 1rem;
         }
         .controls-section {
           flex-direction: column;
           align-items: stretch;
-        }
-        .tracker-search-container {
-          max-width: none;
-        }
-        .category-filters {
-          justify-content: center;
-        }
-        .modal-content {
-          margin: 1rem;
-        }
-        .toast {
-          right: 1rem;
-          left: 1rem;
-          transform: translateY(-100px);
-        }
-        .toast.show {
-          transform: translateY(0);
-        }
-      }
-      @media (max-width: 480px) {
-        .header {
-          padding: 1.5rem 1rem;
-        }
-        .header h1 {
-          font-size: 1.8rem;
-        }
-        .search-section {
-          padding: 1.5rem 1rem;
-        }
-        .tracker-section {
-          padding: 1.5rem 1rem;
-        }
-        .anime-card {
-          padding: 1.5rem;
-        }
-        .category-filters {
-          gap: 0.25rem;
-        }
-        .category-btn {
-          font-size: 0.8rem;
-          padding: 0.4rem 0.8rem;
         }
       }
     </style>
@@ -633,13 +393,13 @@
         <input
           type="text"
           class="search-input"
-          placeholder="Search for anime (e.g., Attack on Titan, Demon Slayer)..."
+          placeholder="Search for anime..."
           id="searchInput"
         />
       </div>
       <div id="loadingContainer" class="loading" style="display: none">
         <div class="spinner"></div>
-        <p>Searching anime database...</p>
+        <p>Searching...</p>
       </div>
       <div id="searchResults" class="search-results"></div>
     </section>
@@ -652,43 +412,28 @@
 
       <div class="controls-section">
         <div class="tracker-search-container">
-          <div class="search-icon">🔍</div>
           <input
             type="text"
             class="tracker-search"
-            placeholder="Search your anime list..."
+            placeholder="Search your list..."
             id="trackerSearch"
           />
         </div>
-
         <div class="category-filters">
-          <button class="category-btn active" data-category="all">All</button>
-          <button class="category-btn" data-category="airing">Airing</button>
+          <button class="category-btn" data-category="all">All</button>
+          <button class="category-btn active" data-category="airing">
+            Airing
+          </button>
           <button class="category-btn" data-category="aired">Aired</button>
           <button class="category-btn" data-category="upcoming">
-            To be aired
+            Upcoming
           </button>
         </div>
-
-        <button
-          id="refreshAllBtn"
-          class="refresh-btn"
-          title="Force-sync all airing shows"
-        >
-          Refresh
-        </button>
+        <button id="refreshAllBtn" class="refresh-btn">Refresh Airing</button>
       </div>
 
       <div id="trackedAnime" class="tracked-anime"></div>
-
-      <div id="emptyState" class="empty-state">
-        <h3>📺 Your anime list is empty</h3>
-        <p>
-          Search for anime above and click on them to add to your tracking
-          list.<br />
-          Start building your personalized anime collection!
-        </p>
-      </div>
+      <div id="emptyState" class="empty-state"></div>
     </section>
 
     <footer class="footer">
@@ -696,8 +441,7 @@
         Created by
         <a
           href="https://github.com/NethakaG"
-          target="_blank"
-          class="github-link"
+          style="color: #3b82f6; text-decoration: none"
           >Nethaka</a
         >
         © <span id="currentYear"></span>
@@ -706,683 +450,299 @@
 
     <div id="confirmModal" class="modal">
       <div class="modal-content">
-        <h3>Remove Anime</h3>
-        <p>
-          Are you sure you want to remove this anime from your tracking list?
+        <h3>Remove Anime?</h3>
+        <p style="margin: 1rem 0 2rem">
+          This will remove it from your tracking list.
         </p>
-        <div class="modal-buttons">
-          <button class="btn btn-danger" id="confirmDelete">Remove</button>
-          <button class="btn btn-secondary" id="cancelDelete">Cancel</button>
-        </div>
+        <button class="btn btn-danger" id="confirmDelete">Remove</button>
+        <button class="btn btn-secondary" id="cancelDelete">Cancel</button>
       </div>
     </div>
 
     <div id="toast" class="toast"></div>
 
     <script>
-      // ---------------------------
-      // Global state
-      // ---------------------------
-      let searchTimeout;
       let trackedAnimeList = [];
-      let countdownIntervals = [];
       let currentDeleteId = null;
-      let draggedElement = null;
-      let draggedIndex = null;
-      let currentCategory = "all";
+      let currentCategory = "airing";
       let currentSearchTerm = "";
+      let searchTimeout;
+      let countdownRegistry = [];
 
-      // DOM
-      const searchInput = document.getElementById("searchInput");
-      const loadingContainer = document.getElementById("loadingContainer");
-      const searchResults = document.getElementById("searchResults");
-      const trackedAnime = document.getElementById("trackedAnime");
-      const animeCount = document.getElementById("animeCount");
-      const emptyState = document.getElementById("emptyState");
-      const confirmModal = document.getElementById("confirmModal");
-      const confirmDelete = document.getElementById("confirmDelete");
-      const cancelDelete = document.getElementById("cancelDelete");
-      const toast = document.getElementById("toast");
-      const trackerSearch = document.getElementById("trackerSearch");
-      const categoryBtns = document.querySelectorAll(".category-btn");
-      const refreshAllBtn = document.getElementById("refreshAllBtn");
-
-      // ---------------------------
-      // AniList GraphQL
-      // ---------------------------
       const ANILIST_API_URL = "https://graphql.anilist.co";
+      const SEARCH_QUERY = `query($s:String){Page(perPage:10){media(search:$s,type:ANIME,sort:POPULARITY_DESC){id title{romaji english} format status episodes averageScore nextAiringEpisode{airingAt episode} startDate{year month day} coverImage{large}}}}`;
+      const REFRESH_QUERY = `query($id:Int){Media(id:$id,type:ANIME){id title{romaji english} format status episodes averageScore nextAiringEpisode{airingAt episode} startDate{year month day}}}`;
 
-      const SEARCH_QUERY = `
-        query ($search: String) {
-          Page(page: 1, perPage: 10) {
-            media(search: $search, type: ANIME, sort: POPULARITY_DESC) {
-              id
-              title { romaji english native }
-              format
-              status
-              episodes
-              averageScore
-              nextAiringEpisode { airingAt episode }
-              startDate { year month day }
-              coverImage { medium large }
-            }
-          }
-        }
-      `;
-
-      const REFRESH_QUERY = `
-        query ($id: Int) {
-          Media(id: $id, type: ANIME) {
-            id
-            title { romaji english native }
-            format
-            status
-            episodes
-            averageScore
-            nextAiringEpisode { airingAt episode }
-            startDate { year month day }
-            coverImage { medium large }
-          }
-        }
-      `;
-
-      // ---------------------------
-      // Init
-      // ---------------------------
       function init() {
         loadTrackedAnime();
-        updateUI();
 
         document.getElementById("currentYear").textContent =
           new Date().getFullYear();
+        document
+          .getElementById("searchInput")
+          .addEventListener("input", handleSearchInput);
+        document
+          .getElementById("trackerSearch")
+          .addEventListener("input", (e) => {
+            currentSearchTerm = e.target.value.toLowerCase();
+            filterAndDisplayAnime();
+          });
 
-        // Events
-        searchInput.addEventListener("input", handleSearchInput);
-        trackerSearch.addEventListener("input", handleTrackerSearch);
-        confirmDelete.addEventListener("click", handleConfirmDelete);
-        cancelDelete.addEventListener("click", hideConfirmModal);
-        categoryBtns.forEach((btn) =>
-          btn.addEventListener("click", handleCategoryFilter)
-        );
-        confirmModal.addEventListener("click", (e) => {
-          if (e.target === confirmModal) hideConfirmModal();
+        document.querySelectorAll(".category-btn").forEach((btn) => {
+          btn.addEventListener("click", (e) => {
+            document
+              .querySelectorAll(".category-btn")
+              .forEach((b) => b.classList.remove("active"));
+            e.target.classList.add("active");
+            currentCategory = e.target.dataset.category;
+            filterAndDisplayAnime();
+          });
         });
 
-        // New: manual refresh button
-        refreshAllBtn.addEventListener("click", handleRefreshAllAiring);
+        document
+          .getElementById("refreshAllBtn")
+          .addEventListener("click", handleRefreshAllAiring);
+        document
+          .getElementById("confirmDelete")
+          .addEventListener("click", handleConfirmDelete);
+        document
+          .getElementById("cancelDelete")
+          .addEventListener(
+            "click",
+            () =>
+              (document.getElementById("confirmModal").style.display = "none"),
+          );
 
-        // Auto catch-up and periodic light refresh
-        refreshDueAnime();
-        setInterval(refreshDueAnime, 15 * 60 * 1000);
-      }
-
-      // ---------------------------
-      // Search flow
-      // ---------------------------
-      function handleSearchInput(e) {
-        clearTimeout(searchTimeout);
-        const query = e.target.value.trim();
-
-        if (query.length < 2) {
-          searchResults.innerHTML = "";
-          loadingContainer.style.display = "none";
-          return;
-        }
-        loadingContainer.style.display = "block";
-        searchResults.innerHTML = "";
-        searchTimeout = setTimeout(() => searchAnime(query), 500);
+        setInterval(updateAllCountdowns, 1000);
+        filterAndDisplayAnime();
       }
 
       async function searchAnime(query) {
         try {
-          const response = await fetch(ANILIST_API_URL, {
+          const res = await fetch(ANILIST_API_URL, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
               query: SEARCH_QUERY,
-              variables: { search: query },
+              variables: { s: query },
             }),
           });
-          const data = await response.json();
-          loadingContainer.style.display = "none";
-          if (data?.data?.Page?.media) {
-            displaySearchResults(data.data.Page.media);
-          } else {
-            searchResults.innerHTML =
-              '<p style="text-align:center;color:#6b7280;padding:2rem;">No results found</p>';
-          }
-        } catch (error) {
-          console.error("Search error:", error);
-          loadingContainer.style.display = "none";
-          searchResults.innerHTML =
-            '<p style="text-align:center;color:#ef4444;padding:2rem;">Error searching anime. Please try again.</p>';
+          const json = await res.json();
+          displaySearchResults(json.data.Page.media);
+        } catch (e) {
+          console.error(e);
         }
+        document.getElementById("loadingContainer").style.display = "none";
       }
 
-      function displaySearchResults(animeList) {
-        searchResults.innerHTML = "";
-        animeList.forEach((anime) =>
-          searchResults.appendChild(createAnimeResultElement(anime))
-        );
+      function handleSearchInput(e) {
+        clearTimeout(searchTimeout);
+        const q = e.target.value.trim();
+        if (q.length < 2) return;
+        document.getElementById("loadingContainer").style.display = "block";
+        searchTimeout = setTimeout(() => searchAnime(q), 500);
       }
 
-      function createAnimeResultElement(anime) {
-        const div = document.createElement("div");
-        div.className = "anime-result";
-        div.onclick = () => {
-          addAnimeToTracker(anime);
-          searchResults.innerHTML = "";
-          searchInput.value = "";
-        };
-
-        const title =
-          anime.title.english || anime.title.romaji || anime.title.native;
-        const status = anime.status || "UNKNOWN";
-        const statusClass = getStatusClass(status);
-        const nextEpisodeInfo = getNextEpisodeInfo(anime);
-
-        div.innerHTML = `
-          <div class="anime-info">
-            <h3>${title}</h3>
-            <div class="anime-meta">
-              <span class="anime-tag">${anime.format || "TV"}</span>
-              <span class="anime-tag ${statusClass}">${formatStatus(
-          status
-        )}</span>
-              ${
-                anime.averageScore
-                  ? `<span class="anime-tag">${anime.averageScore}%</span>`
-                  : ""
-              }
-              ${
-                anime.episodes
-                  ? `<span class="anime-tag">${anime.episodes} eps</span>`
-                  : ""
-              }
-            </div>
-            ${
-              nextEpisodeInfo
-                ? `<div class="next-episode">${nextEpisodeInfo}</div>`
-                : ""
+      function displaySearchResults(list) {
+        const container = document.getElementById("searchResults");
+        container.innerHTML = "";
+        list.forEach((anime) => {
+          const div = document.createElement("div");
+          div.className = "anime-result";
+          const title = anime.title.english || anime.title.romaji;
+          div.innerHTML = `<h3>${title}</h3><p class="anime-tag">${anime.status}</p>`;
+          div.onclick = () => {
+            if (!trackedAnimeList.find((a) => a.id === anime.id)) {
+              trackedAnimeList.push(anime);
+              saveTrackedAnime();
+              filterAndDisplayAnime();
+              showToast("Added to list!");
             }
-          </div>
-        `;
-        return div;
+            container.innerHTML = "";
+            document.getElementById("searchInput").value = "";
+          };
+          container.appendChild(div);
+        });
       }
 
-      // ---------------------------
-      // Tracker list
-      // ---------------------------
-      function addAnimeToTracker(anime) {
-        const existing = trackedAnimeList.find((t) => t.id === anime.id);
-        if (existing) {
-          showToast("This anime is already in your tracking list!", "error");
-          return;
-        }
-        trackedAnimeList.push(anime);
-        saveTrackedAnime();
-        filterAndDisplayAnime();
-        showToast(
-          `Added "${anime.title.english || anime.title.romaji}" to your list!`,
-          "success"
-        );
+      function filterAndDisplayAnime() {
+        const filtered = trackedAnimeList.filter((a) => {
+          const status = a.status;
+          const catMatch =
+            currentCategory === "all" ||
+            (currentCategory === "airing" && status === "RELEASING") ||
+            (currentCategory === "aired" && status === "FINISHED") ||
+            (currentCategory === "upcoming" && status === "NOT_YET_RELEASED");
+          const title = (a.title.english || a.title.romaji).toLowerCase();
+          const searchMatch = title.includes(currentSearchTerm);
+          return catMatch && searchMatch;
+        });
+
+        const container = document.getElementById("trackedAnime");
+        container.innerHTML = "";
+        countdownRegistry = [];
+
+        filtered.forEach((anime, index) => {
+          container.appendChild(createAnimeCard(anime, index));
+          registerCountdown(anime);
+        });
+
+        document.getElementById("animeCount").textContent =
+          `${filtered.length} anime tracked`;
+        document.getElementById("emptyState").style.display = filtered.length
+          ? "none"
+          : "block";
+        document.getElementById("emptyState").innerHTML =
+          trackedAnimeList.length
+            ? "<h3>No matches found.</h3>"
+            : "<h3>Your list is empty. Search above to add anime!</h3>";
       }
 
-      function removeAnimeFromTracker(animeId) {
-        currentDeleteId = animeId;
-        showConfirmModal();
-      }
-
-      function handleConfirmDelete() {
-        if (!currentDeleteId) return;
-        const removed = trackedAnimeList.find((a) => a.id === currentDeleteId);
-        trackedAnimeList = trackedAnimeList.filter(
-          (a) => a.id !== currentDeleteId
-        );
-        saveTrackedAnime();
-        filterAndDisplayAnime();
-        hideConfirmModal();
-        if (removed)
-          showToast(
-            `Removed "${
-              removed.title.english || removed.title.romaji
-            }" from your list`,
-            "success"
-          );
-        currentDeleteId = null;
-      }
-
-      function showConfirmModal() {
-        confirmModal.style.display = "flex";
-      }
-      function hideConfirmModal() {
-        confirmModal.style.display = "none";
-        currentDeleteId = null;
-      }
-
-      // Drag and drop
-      function handleDragStart(e, index) {
-        draggedElement = e.target;
-        draggedIndex = index;
-        e.target.classList.add("dragging");
-        e.dataTransfer.effectAllowed = "move";
-        e.dataTransfer.setData("text/html", e.target.outerHTML);
-      }
-      function handleDragEnd(e) {
-        e.target.classList.remove("dragging");
-        draggedElement = null;
-        draggedIndex = null;
-        document
-          .querySelectorAll(".anime-card")
-          .forEach((c) => c.classList.remove("drag-over"));
-      }
-      function handleDragOver(e) {
-        e.preventDefault();
-        e.dataTransfer.dropEffect = "move";
-      }
-      function handleDragEnter(e) {
-        e.preventDefault();
-        e.target.closest(".anime-card")?.classList.add("drag-over");
-      }
-      function handleDragLeave(e) {
-        e.preventDefault();
-        e.target.closest(".anime-card")?.classList.remove("drag-over");
-      }
-      function handleDrop(e, dropIndex) {
-        e.preventDefault();
-        e.target.closest(".anime-card")?.classList.remove("drag-over");
-        if (draggedIndex !== null && draggedIndex !== dropIndex) {
-          const draggedItem = trackedAnimeList[draggedIndex];
-          trackedAnimeList.splice(draggedIndex, 1);
-          trackedAnimeList.splice(dropIndex, 0, draggedItem);
-          saveTrackedAnime();
-          filterAndDisplayAnime();
-          showToast("Anime order updated!", "success");
-        }
-      }
-
-      function updateUI() {
-        filterAndDisplayAnime();
-      }
-
-      function createTrackedAnimeElement(anime, index) {
+      function createAnimeCard(anime, index) {
         const div = document.createElement("div");
         div.className = "anime-card";
         div.draggable = true;
-        div.addEventListener("dragstart", (e) => handleDragStart(e, index));
-        div.addEventListener("dragend", handleDragEnd);
-        div.addEventListener("dragover", handleDragOver);
-        div.addEventListener("dragenter", handleDragEnter);
-        div.addEventListener("dragleave", handleDragLeave);
-        div.addEventListener("drop", (e) => handleDrop(e, index));
-
-        const title =
-          anime.title.english || anime.title.romaji || anime.title.native;
-        const status = anime.status || "UNKNOWN";
-        const statusClass = getStatusClass(status);
+        const title = anime.title.english || anime.title.romaji;
 
         div.innerHTML = `
-          <button class="delete-btn" onclick="removeAnimeFromTracker(${
-            anime.id
-          })">×</button>
+          <button class="delete-btn" onclick="removeAnime(${anime.id})">×</button>
           <h3>${title}</h3>
           <div class="anime-details">
-            <div class="detail-item"><span class="detail-label">Score</span><span class="detail-value">${
-              anime.averageScore ? `${anime.averageScore}%` : "N/A"
-            }</span></div>
-            <div class="detail-item"><span class="detail-label">Episodes</span><span class="detail-value">${
-              anime.episodes || "Unknown"
-            }</span></div>
-            <div class="detail-item"><span class="detail-label">Format</span><span class="detail-value">${
-              anime.format || "TV"
-            }</span></div>
-            <div class="detail-item"><span class="detail-label">Status</span><span class="detail-value ${statusClass}">${formatStatus(
-          status
-        )}</span></div>
+            <div><p class="detail-label">Score</p><p class="detail-value">${anime.averageScore || "N/A"}%</p></div>
+            <div><p class="detail-label">Episodes</p><p class="detail-value">${anime.episodes || "??"}</p></div>
+            <div><p class="detail-label">Format</p><p class="detail-value">${anime.format}</p></div>
+            <div><p class="detail-label">Status</p><p class="detail-value">${anime.status}</p></div>
           </div>
-          <div id="countdown-${anime.id}"></div>
+          <div id="cd-container-${anime.id}"></div>
         `;
 
-        setTimeout(() => setupCountdown(anime), 100);
+        div.addEventListener("dragstart", (e) => {
+          e.dataTransfer.setData("text/plain", index);
+          div.style.opacity = "0.4";
+        });
+        div.addEventListener("dragend", () => (div.style.opacity = "1"));
+        div.addEventListener("dragover", (e) => e.preventDefault());
+        div.addEventListener("drop", (e) => {
+          const fromIndex = e.dataTransfer.getData("text/plain");
+          const item = trackedAnimeList.splice(fromIndex, 1)[0];
+          trackedAnimeList.splice(index, 0, item);
+          saveTrackedAnime();
+          filterAndDisplayAnime();
+        });
+
         return div;
       }
 
-      // ---------------------------
-      // Countdown logic (auto-refreshes at zero)
-      // ---------------------------
-      function setupCountdown(anime) {
-        const countdownElement = document.getElementById(
-          `countdown-${anime.id}`
-        );
-        if (!countdownElement) return;
+      function registerCountdown(anime) {
+        const container = document.getElementById(`cd-container-${anime.id}`);
+        if (!container) return;
 
-        const status = anime.status || "UNKNOWN";
-
-        if (status === "FINISHED") {
-          countdownElement.innerHTML = `
-            <div class="countdown-section completed">
-              <div class="countdown-title">✅ Series Completed</div>
-              <div class="countdown-timer">Finished airing</div>
-            </div>`;
-          return;
-        }
-
-        if (anime.nextAiringEpisode) {
-          const nextEpisodeTime = anime.nextAiringEpisode.airingAt * 1000;
-          const episodeNumber = anime.nextAiringEpisode.episode;
-
-          countdownElement.innerHTML = `
-            <div class="countdown-section airing">
-              <div class="countdown-title">📺 Next Episode ${episodeNumber}</div>
-              <div class="countdown-timer" id="timer-${anime.id}">Calculating...</div>
-            </div>`;
-
-          const timerElement = document.getElementById(`timer-${anime.id}`);
-
-          const interval = setInterval(() => {
-            const now = Date.now();
-            const timeLeft = nextEpisodeTime - now;
-
-            if (timeLeft <= 0) {
-              timerElement.textContent = "Episode released";
-              clearInterval(interval);
-              refreshAnimeById(anime.id); // pull next schedule immediately
-              return;
-            }
-
-            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-            const hours = Math.floor(
-              (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-            );
-            const minutes = Math.floor(
-              (timeLeft % (1000 * 60 * 60)) / (1000 * 60)
-            );
-            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-
-            let countdown = "";
-            if (days > 0) countdown += `${days}d `;
-            if (hours > 0) countdown += `${hours}h `;
-            if (minutes > 0) countdown += `${minutes}m `;
-            countdown += `${seconds}s`;
-            timerElement.textContent = countdown;
-          }, 1000);
-
-          countdownIntervals.push(interval);
-        } else if (status === "NOT_YET_RELEASED" && anime.startDate) {
-          const startDate = new Date(
+        if (anime.status === "FINISHED") {
+          container.innerHTML = `<div class="countdown-section completed"><div class="countdown-title">✅ Series Completed</div><div class="countdown-timer">All episodes aired</div></div>`;
+        } else if (anime.nextAiringEpisode) {
+          const target = anime.nextAiringEpisode.airingAt * 1000;
+          container.innerHTML = `<div class="countdown-section airing"><div class="countdown-title">📺 Episode ${anime.nextAiringEpisode.episode} in</div><div class="countdown-timer" id="timer-${anime.id}">--:--:--</div></div>`;
+          countdownRegistry.push({ id: anime.id, target });
+        } else if (
+          anime.status === "NOT_YET_RELEASED" &&
+          anime.startDate.year
+        ) {
+          const target = new Date(
             anime.startDate.year,
             (anime.startDate.month || 1) - 1,
-            anime.startDate.day || 1
-          );
-
-          countdownElement.innerHTML = `
-            <div class="countdown-section upcoming">
-              <div class="countdown-title">🕒 Countdown to Release</div>
-              <div class="countdown-timer" id="timer-${anime.id}">Calculating...</div>
-            </div>`;
-
-          const timerElement = document.getElementById(`timer-${anime.id}`);
-
-          const interval = setInterval(() => {
-            const now = Date.now();
-            const timeLeft = startDate.getTime() - now;
-
-            if (timeLeft <= 0) {
-              timerElement.textContent = "Should be released!";
-              clearInterval(interval);
-              refreshAnimeById(anime.id); // pick up first nextAiringEpisode
-              return;
-            }
-
-            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-            const hours = Math.floor(
-              (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-            );
-
-            if (days > 30) {
-              timerElement.textContent = `${Math.floor(days / 30)} months, ${
-                days % 30
-              } days`;
-            } else if (days > 0) {
-              timerElement.textContent = `${days} days, ${hours} hours`;
-            } else {
-              const minutes = Math.floor(
-                (timeLeft % (1000 * 60 * 60)) / (1000 * 60)
-              );
-              timerElement.textContent = `${hours}h ${minutes}m`;
-            }
-          }, 1000);
-
-          countdownIntervals.push(interval);
+            anime.startDate.day || 1,
+          ).getTime();
+          container.innerHTML = `<div class="countdown-section upcoming"><div class="countdown-title">🕒 Premieres in</div><div class="countdown-timer" id="timer-${anime.id}">--:--:--</div></div>`;
+          countdownRegistry.push({ id: anime.id, target });
         } else {
-          if (status === "RELEASING" && !anime.nextAiringEpisode) {
-            countdownElement.innerHTML = `
-              <div class="countdown-section default">
-                <div class="countdown-title">📊 Status</div>
-                <div class="countdown-timer">Awaiting next schedule</div>
-              </div>`;
-          } else {
-            countdownElement.innerHTML = `
-              <div class="countdown-section default">
-                <div class="countdown-title">📊 Status</div>
-                <div class="countdown-timer">${formatStatus(status)}</div>
-              </div>`;
-          }
+          container.innerHTML = `<div class="countdown-section default"><div class="countdown-title">📊 Status</div><div class="countdown-timer">TBA Schedule</div></div>`;
         }
       }
 
-      // ---------------------------
-      // Refresh helpers
-      // ---------------------------
+      function updateAllCountdowns() {
+        const now = Date.now();
+        countdownRegistry.forEach((item) => {
+          const el = document.getElementById(`timer-${item.id}`);
+          if (!el) return;
+
+          const diff = item.target - now;
+          if (diff <= 0) {
+            el.textContent = "Updating...";
+            if (diff > -2000) refreshAnimeById(item.id);
+            return;
+          }
+
+          const d = Math.floor(diff / 86400000);
+          const h = Math.floor((diff % 86400000) / 3600000);
+          const m = Math.floor((diff % 3600000) / 60000);
+          const s = Math.floor((diff % 60000) / 1000);
+
+          el.textContent = `${d > 0 ? d + "d " : ""}${h.toString().padStart(2, "0")}h ${m.toString().padStart(2, "0")}m ${s.toString().padStart(2, "0")}s`;
+        });
+      }
+
       async function refreshAnimeById(id) {
         try {
-          const response = await fetch(ANILIST_API_URL, {
+          const res = await fetch(ANILIST_API_URL, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ query: REFRESH_QUERY, variables: { id } }),
           });
-          const data = await response.json();
-          const fresh = data?.data?.Media;
-          if (!fresh) return false;
-
+          const json = await res.json();
+          const fresh = json.data.Media;
           const idx = trackedAnimeList.findIndex((a) => a.id === id);
           if (idx !== -1) {
             trackedAnimeList[idx] = fresh;
             saveTrackedAnime();
-            filterAndDisplayAnime(); // re-render timers with fresh data
+            filterAndDisplayAnime();
           }
-          return true;
         } catch (e) {
-          console.error("Refresh error:", e);
-          return false;
+          console.error(e);
         }
       }
 
-      function refreshDueAnime() {
-        const now = Date.now();
-        const dueIds = trackedAnimeList
-          .filter(
-            (a) =>
-              a?.nextAiringEpisode?.airingAt &&
-              a.nextAiringEpisode.airingAt * 1000 <= now
-          )
-          .map((a) => a.id);
-
-        const airingNoSchedule = trackedAnimeList
-          .filter((a) => a?.status === "RELEASING" && !a?.nextAiringEpisode)
-          .map((a) => a.id);
-
-        const uniqueIds = [...new Set([...dueIds, ...airingNoSchedule])];
-        uniqueIds.forEach((id) => refreshAnimeById(id));
-      }
-
-      // New: manual refresh all airing shows
       async function handleRefreshAllAiring() {
-        const ids = [
-          ...new Set(
-            trackedAnimeList
-              .filter((a) => a?.status === "RELEASING")
-              .map((a) => a.id)
-          ),
-        ];
-        if (ids.length === 0) {
-          showToast("No airing shows to refresh.", "error");
-          return;
-        }
+        const btn = document.getElementById("refreshAllBtn");
+        btn.disabled = true;
+        btn.textContent = "Refreshing...";
+        const airingIds = trackedAnimeList
+          .filter((a) => a.status === "RELEASING")
+          .map((a) => a.id);
+        await Promise.all(airingIds.map((id) => refreshAnimeById(id)));
+        btn.disabled = false;
+        btn.textContent = "Refresh Airing";
+        showToast("List updated!");
+      }
 
-        refreshAllBtn.disabled = true;
-        const prevText = refreshAllBtn.textContent;
-        refreshAllBtn.textContent = "Refreshing…";
+      function removeAnime(id) {
+        currentDeleteId = id;
+        document.getElementById("confirmModal").style.display = "flex";
+      }
 
-        const results = await Promise.all(ids.map(refreshAnimeById));
-        const ok = results.filter(Boolean).length;
-
-        refreshAllBtn.disabled = false;
-        refreshAllBtn.textContent = prevText;
-
-        showToast(
-          `Refreshed ${ok}/${ids.length} airing show${
-            ids.length > 1 ? "s" : ""
-          }.`,
-          ok ? "success" : "error"
+      function handleConfirmDelete() {
+        trackedAnimeList = trackedAnimeList.filter(
+          (a) => a.id !== currentDeleteId,
         );
-      }
-
-      // ---------------------------
-      // Filters & display
-      // ---------------------------
-      function handleTrackerSearch(e) {
-        currentSearchTerm = e.target.value.toLowerCase().trim();
+        saveTrackedAnime();
         filterAndDisplayAnime();
+        document.getElementById("confirmModal").style.display = "none";
+        showToast("Removed from list");
       }
 
-      function handleCategoryFilter(e) {
-        categoryBtns.forEach((btn) => btn.classList.remove("active"));
-        e.target.classList.add("active");
-        currentCategory = e.target.dataset.category;
-        filterAndDisplayAnime();
+      function showToast(msg) {
+        const t = document.getElementById("toast");
+        t.textContent = msg;
+        t.classList.add("show");
+        setTimeout(() => t.classList.remove("show"), 3000);
       }
 
-      function filterAndDisplayAnime() {
-        const filtered = trackedAnimeList.filter((anime) => {
-          const status = anime.status || "UNKNOWN";
-          let categoryMatch = true;
-
-          if (currentCategory !== "all") {
-            switch (currentCategory) {
-              case "airing":
-                categoryMatch = status === "RELEASING";
-                break;
-              case "aired":
-                categoryMatch = status === "FINISHED";
-                break;
-              case "upcoming":
-                categoryMatch = status === "NOT_YET_RELEASED";
-                break;
-            }
-          }
-
-          let searchMatch = true;
-          if (currentSearchTerm) {
-            const title = (
-              anime.title.english ||
-              anime.title.romaji ||
-              anime.title.native ||
-              ""
-            ).toLowerCase();
-            searchMatch = title.includes(currentSearchTerm);
-          }
-          return categoryMatch && searchMatch;
-        });
-
-        displayFilteredAnime(filtered);
-        animeCount.textContent = `${filtered.length} anime tracked`;
-
-        if (filtered.length === 0 && trackedAnimeList.length > 0) {
-          emptyState.innerHTML = `<h3>🔍 No anime found</h3><p>Try adjusting your search or category filter.</p>`;
-          emptyState.style.display = "block";
-        } else if (trackedAnimeList.length === 0) {
-          emptyState.innerHTML = `
-            <h3>📺 Your anime list is empty</h3>
-            <p>Search for anime above and click on them to add to your tracking list.<br/>Start building your personalized anime collection!</p>`;
-          emptyState.style.display = "block";
-        } else {
-          emptyState.style.display = "none";
-        }
-      }
-
-      function displayFilteredAnime(animeList) {
-        countdownIntervals.forEach((i) => clearInterval(i));
-        countdownIntervals = [];
-        trackedAnime.innerHTML = "";
-        animeList.forEach((anime, index) =>
-          trackedAnime.appendChild(createTrackedAnimeElement(anime, index))
-        );
-      }
-
-      // ---------------------------
-      // Utilities
-      // ---------------------------
-      function getStatusClass(status) {
-        switch (status) {
-          case "RELEASING":
-            return "status-releasing";
-          case "FINISHED":
-            return "status-finished";
-          case "NOT_YET_RELEASED":
-            return "status-not-yet-released";
-          default:
-            return "status-unknown";
-        }
-      }
-
-      function formatStatus(status) {
-        switch (status) {
-          case "RELEASING":
-            return "Airing";
-          case "FINISHED":
-            return "Completed";
-          case "NOT_YET_RELEASED":
-            return "Upcoming";
-          case "CANCELLED":
-            return "Cancelled";
-          case "HIATUS":
-            return "On Hiatus";
-          default:
-            return "Unknown";
-        }
-      }
-
-      function getNextEpisodeInfo(anime) {
-        if (anime.nextAiringEpisode) {
-          const date = new Date(anime.nextAiringEpisode.airingAt * 1000);
-          const ep = anime.nextAiringEpisode.episode;
-          return `Next episode ${ep} airs: ${date.toLocaleDateString()} at ${date.toLocaleTimeString()}`;
-        }
-        return null;
-      }
-
+      // DATA RECOVERY FIX: Changed key back to 'animeTracker'
       function saveTrackedAnime() {
         localStorage.setItem("animeTracker", JSON.stringify(trackedAnimeList));
       }
-
       function loadTrackedAnime() {
-        const saved = localStorage.getItem("animeTracker");
-        if (saved) {
-          try {
-            trackedAnimeList = JSON.parse(saved) || [];
-          } catch (e) {
-            console.error("Error loading saved anime:", e);
-            trackedAnimeList = [];
-          }
-        }
-      }
-
-      function showToast(message, type = "success") {
-        toast.textContent = message;
-        toast.className = `toast ${type}`;
-        toast.classList.add("show");
-        setTimeout(() => toast.classList.remove("show"), 3000);
+        const data = localStorage.getItem("animeTracker");
+        if (data) trackedAnimeList = JSON.parse(data);
       }
 
       document.addEventListener("DOMContentLoaded", init);
